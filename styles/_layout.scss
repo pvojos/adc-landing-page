@@ -1,0 +1,466 @@
+body {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.header {
+    background-color: $backgoundColor;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    transition: all .85s ease;
+
+    @include tablets {
+        position: relative;
+    }
+
+    @include phones {
+        display: flex;
+        justify-content: center;
+    }
+
+    &.discover {
+        background-color: transparent;
+
+        @include tablets {
+            background-color: $backgoundColor;
+        }
+    }
+
+    .header_logo {
+        width: 100px; 
+        z-index: 3; 
+        margin: 25px;
+
+        @include phones {
+            margin: 15px;
+        }
+    }
+}
+
+main {
+    .main_image-section {
+        position: relative;
+
+        .main_copy-and-interaction {
+            width: 80%;
+            position: absolute;     
+            bottom: 50px; 
+            left: 0; 
+            z-index: 2; 
+            margin: 35px;
+
+            @include tablets {
+                margin-top: 25px;
+                margin-right: 0;
+                bottom: 0;
+                top: 2px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 93.5%;
+            }
+
+            @include phones {
+                margin: 20px;
+                width: 91%;
+            }
+
+            .main_copy {
+                @include mainCopy;
+
+                @include tablets {
+                    font-size: clamp(1rem, 1.2vw, 1.3rem);
+
+                    span {
+                        font-weight: 700;
+                        font-size: clamp(1.2rem, 1.4vw, 1.5rem);
+                    }
+                }
+
+                @include phones() {
+                    font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+
+                    span {
+                        font-weight: 700;
+                        font-size: clamp(1rem, 1.3vw, 1.4rem);
+                    }
+                }
+
+                &.discover {
+                    display: none;
+                }
+            }
+
+            .main_copy-discover {
+                @include mainCopy;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 3s ease;
+                position: absolute;      
+                z-index: 2;
+                bottom: 70px;
+
+                @include tablets {
+                    bottom: 0;
+                    font-size: clamp(1rem, 1.2vw, 1.3rem);
+                    margin: 0 auto;
+                    text-align: center;
+
+                    span {
+                        font-weight: 700;
+                        font-size: clamp(1.2rem, 1.4vw, 1.5rem);;
+                    }
+                }
+
+                @include phones() {
+                    font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+
+                    span {
+                        font-weight: 700;
+                        font-size: clamp(1rem, 1.3vw, 1.4rem);
+                    }
+                }
+
+                &.discover {
+                    opacity: 1;
+                    visibility: visible;
+                    bottom: 70px;
+
+                    @include tablets {
+                        bottom: 0;
+                        position: relative;
+                    }
+                }
+            }
+        }
+
+        .main_product-image-web {
+            position: relative;
+            z-index: 0;
+            width: 100%;
+            height: 730px;
+            overflow: hidden;
+
+            @include tablets {
+                height: 500px;
+            }
+
+            @include phones {
+                display: none;
+            }
+
+
+            .main_product-image-web_background {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0;
+                visibility: hidden;
+                z-index: 1;
+                transition: all .85s ease;
+
+                &.discover {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+    
+            .main_product-image-web_no-background {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    
+        .main_product-image-movil {
+            position: relative;
+            z-index: 0;
+            display: none;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+
+            @include phones {
+                display: block;
+            }
+
+            .main_product-image-movil_background {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0;
+                visibility: hidden;
+                z-index: 1;
+                transition: all .85s ease;
+
+                &.discover {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            .main_product-image-movil_no-background {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .main_description-and-call-to-action {
+            background-color: $secondColor;
+            display: none;
+
+            &.discover {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 25px;
+            }
+
+            .main_description {
+                @include h3($backgoundColor);
+
+                @include phones {
+                    font-size: clamp(0.7rem, 0.88vw, 1rem);
+                }
+            }
+        }
+    }
+
+    .main_benefits {
+        background-color: $backgoundColor;
+
+        h2 {
+            @include h2;
+
+            @include tablets {
+                font-size: clamp(1rem, 1.2vw, 1.3rem);
+                padding: 30px;
+            }
+
+            @include phones {
+                font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+                padding: 25px;
+                width: 200px;
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+
+        .main_benefits-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10%;
+            padding-bottom: 50px;
+
+            @include tablets {
+                gap: 7%;
+            }
+
+            @include phones {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                padding-bottom: 35px;
+            }
+
+            .main_benefits-unit {
+                width: 20%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+
+                @include phones {
+                    width: 60%;
+                }
+
+                img {
+                    height: 60px;
+                    margin-bottom: 25px;
+
+                    @include tablets {
+                        height: 50px;
+                    }
+
+                    @include phones {
+                        height: 40px;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                h3 {
+                    @include h3($secondColor);
+                    font-weight: 700;
+                    margin-bottom: 15px;
+
+                    @include phones {
+                        font-size: clamp(0.75rem, 0.91vw, 1.1rem);
+                    }
+                }
+
+                p {
+                    @include contentText;
+
+                    @include phones {
+                        font-size: clamp(0.7rem, 0.88vw, 1rem);
+                    }
+                }
+            }
+        }
+    }
+
+    .main_user-reviews {
+        background-color: $secondBackgroundColor;
+        width: 100%;
+
+        h2 {
+            @include h2;
+
+            @include tablets {
+                font-size: clamp(1rem, 1.2vw, 1.3rem);
+                padding: 30px;
+            }
+
+            @include phones {
+                font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+                padding: 25px;
+                width: 200px;
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+
+        .main_user-reviews-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 35px;
+            padding-bottom: 50px;
+
+            @include tablets {
+                flex-wrap: wrap;
+                margin: 0 25px 0 25px;
+                gap: 20px;
+            }
+
+            @include phones {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .main_user-reviews-unit {
+                background-color: $backgoundColor;
+                width: 180px;
+                display: flex;
+                flex-direction: column;
+                border-radius: 15px;
+                box-shadow: 5px 5px 8px 1px rgb(119, 98, 68);
+                padding: 20px;
+
+                @include tablets {
+                    width: 160px;
+                }
+
+                @include phones {
+                    width: 75%;
+                    flex-direction: row;
+                    gap: 25px;
+                }
+
+                img {
+                    width: 100px;
+                    margin-bottom: 20px;
+                    border-radius: 50px;
+                    align-self: center;
+
+                    @include phones {
+                        margin-bottom: 0;
+                        width: 80px;
+                    }
+                }
+
+                h4 {
+                    @include h4;
+                    margin-bottom: 15px;
+
+                    @include tablets {
+                        font-size: clamp(0.61rem, 0.75vw, 1rem);
+                    }
+
+                    @include phones {
+                        margin-bottom: 10px;
+                    }
+                }
+
+                p {
+                    font-family: $contentFont;
+                    font-weight: 500;
+                    color: $secondColor;
+                    font-size: clamp(0.7rem, 0.9vw, 1rem);
+                    font-style: italic;
+
+                    @include phones {
+                        line-height: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: $backgoundColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 25px;
+
+    @include tablets {
+        flex-direction: column;
+        padding: 0 25px;
+    }
+
+    .footer_call-to-action {
+        flex: 1;
+        text-align: center;
+
+        h2 {
+            font-family: $titleFont;
+            font-weight: 600;
+            color: $secondColor;
+            font-size: clamp(1.1rem, 1.3vw, 1.4rem);
+            display: flex;
+            justify-content: center;
+
+            @include tablets {
+                font-size: clamp(1rem, 1.2vw, 1.3rem);
+                padding: 30px 30px 0 30px;
+            }
+
+            @include phones {
+                font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+                padding: 25px 25px 0 25px;
+                width: 300px;
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .footer_logo {
+        width: 100px;
+
+        @include tablets {
+            margin-bottom: 25px;
+        }
+    }
+}

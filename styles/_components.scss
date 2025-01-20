@@ -1,0 +1,53 @@
+.main_interaction {
+    @include button;
+
+    @include tablets {
+        margin-top: 0;
+    }
+
+    @include phones {
+        font-size: clamp(0.7rem, 0.88vw, 1rem);
+    }
+
+    &.hover {
+        @include hoverButton;
+
+        @include tablets {
+            margin-top: 0;
+        }
+    }
+
+    &.discover {
+        display: none;
+    }
+}
+
+.main_call-to-action {
+    @include button;
+
+    @include phones {
+        font-size: clamp(0.7rem, 0.88vw, 1rem);
+    }
+
+    &.hover {
+        @include hoverButton;
+    }
+}
+
+.footer_call-to-action {
+    button {
+        @include button;
+
+        @include tablets {
+            margin-bottom: 25px;
+        }
+
+        @include phones {
+            font-size: clamp(0.7rem, 0.88vw, 1rem);
+        }
+
+        &.hover {
+            @include hoverButton;
+        }
+    }
+}

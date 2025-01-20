@@ -1,0 +1,609 @@
+body {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.header {
+  background-color: rgb(238, 232, 224);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  transition: all 0.85s ease;
+}
+@media screen and (max-width: 69rem) {
+  .header {
+    position: relative;
+  }
+}
+@media screen and (max-width: 40rem) {
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+}
+.header.discover {
+  background-color: transparent;
+}
+@media screen and (max-width: 69rem) {
+  .header.discover {
+    background-color: rgb(238, 232, 224);
+  }
+}
+.header .header_logo {
+  width: 100px;
+  z-index: 3;
+  margin: 25px;
+}
+@media screen and (max-width: 40rem) {
+  .header .header_logo {
+    margin: 15px;
+  }
+}
+
+main .main_image-section {
+  position: relative;
+}
+main .main_image-section .main_copy-and-interaction {
+  width: 80%;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  z-index: 2;
+  margin: 35px;
+}
+@media screen and (max-width: 69rem) {
+  main .main_image-section .main_copy-and-interaction {
+    margin-top: 25px;
+    margin-right: 0;
+    bottom: 0;
+    top: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 93.5%;
+  }
+}
+@media screen and (max-width: 40rem) {
+  main .main_image-section .main_copy-and-interaction {
+    margin: 20px;
+    width: 91%;
+  }
+}
+main .main_image-section .main_copy-and-interaction .main_copy {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  color: rgb(36, 37, 11);
+  font-size: clamp(1.2rem, 1.5vw, 1.6rem);
+}
+main .main_image-section .main_copy-and-interaction .main_copy span {
+  font-weight: 700;
+  font-size: clamp(1.4rem, 1.8vw, 1.9rem);
+}
+@media screen and (max-width: 69rem) {
+  main .main_image-section .main_copy-and-interaction .main_copy {
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
+  }
+  main .main_image-section .main_copy-and-interaction .main_copy span {
+    font-weight: 700;
+    font-size: clamp(1.2rem, 1.4vw, 1.5rem);
+  }
+}
+@media screen and (max-width: 40rem) {
+  main .main_image-section .main_copy-and-interaction .main_copy {
+    font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+  }
+  main .main_image-section .main_copy-and-interaction .main_copy span {
+    font-weight: 700;
+    font-size: clamp(1rem, 1.3vw, 1.4rem);
+  }
+}
+main .main_image-section .main_copy-and-interaction .main_copy.discover {
+  display: none;
+}
+main .main_image-section .main_copy-and-interaction .main_copy-discover {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  color: rgb(36, 37, 11);
+  font-size: clamp(1.2rem, 1.5vw, 1.6rem);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 3s ease;
+  position: absolute;
+  z-index: 2;
+  bottom: 70px;
+}
+main .main_image-section .main_copy-and-interaction .main_copy-discover span {
+  font-weight: 700;
+  font-size: clamp(1.4rem, 1.8vw, 1.9rem);
+}
+@media screen and (max-width: 69rem) {
+  main .main_image-section .main_copy-and-interaction .main_copy-discover {
+    bottom: 0;
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
+    margin: 0 auto;
+    text-align: center;
+  }
+  main .main_image-section .main_copy-and-interaction .main_copy-discover span {
+    font-weight: 700;
+    font-size: clamp(1.2rem, 1.4vw, 1.5rem);
+  }
+}
+@media screen and (max-width: 40rem) {
+  main .main_image-section .main_copy-and-interaction .main_copy-discover {
+    font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+  }
+  main .main_image-section .main_copy-and-interaction .main_copy-discover span {
+    font-weight: 700;
+    font-size: clamp(1rem, 1.3vw, 1.4rem);
+  }
+}
+main .main_image-section .main_copy-and-interaction .main_copy-discover.discover {
+  opacity: 1;
+  visibility: visible;
+  bottom: 70px;
+}
+@media screen and (max-width: 69rem) {
+  main .main_image-section .main_copy-and-interaction .main_copy-discover.discover {
+    bottom: 0;
+    position: relative;
+  }
+}
+main .main_image-section .main_product-image-web {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 730px;
+  overflow: hidden;
+}
+@media screen and (max-width: 69rem) {
+  main .main_image-section .main_product-image-web {
+    height: 500px;
+  }
+}
+@media screen and (max-width: 40rem) {
+  main .main_image-section .main_product-image-web {
+    display: none;
+  }
+}
+main .main_image-section .main_product-image-web .main_product-image-web_background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  transition: all 0.85s ease;
+}
+main .main_image-section .main_product-image-web .main_product-image-web_background.discover {
+  opacity: 1;
+  visibility: visible;
+}
+main .main_image-section .main_product-image-web .main_product-image-web_no-background {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .main_image-section .main_product-image-movil {
+  position: relative;
+  z-index: 0;
+  display: none;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+@media screen and (max-width: 40rem) {
+  main .main_image-section .main_product-image-movil {
+    display: block;
+  }
+}
+main .main_image-section .main_product-image-movil .main_product-image-movil_background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  transition: all 0.85s ease;
+}
+main .main_image-section .main_product-image-movil .main_product-image-movil_background.discover {
+  opacity: 1;
+  visibility: visible;
+}
+main .main_image-section .main_product-image-movil .main_product-image-movil_no-background {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .main_image-section .main_description-and-call-to-action {
+  background-color: rgb(36, 37, 11);
+  display: none;
+}
+main .main_image-section .main_description-and-call-to-action.discover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+main .main_image-section .main_description-and-call-to-action .main_description {
+  font-family: "Lora", serif;
+  font-weight: 600;
+  color: rgb(238, 232, 224);
+  font-size: clamp(0.8rem, 0.95vw, 1.15rem);
+  text-align: center;
+}
+@media screen and (max-width: 40rem) {
+  main .main_image-section .main_description-and-call-to-action .main_description {
+    font-size: clamp(0.7rem, 0.88vw, 1rem);
+  }
+}
+main .main_benefits {
+  background-color: rgb(238, 232, 224);
+}
+main .main_benefits h2 {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  color: rgb(36, 37, 11);
+  font-size: clamp(1.1rem, 1.3vw, 1.4rem);
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+@media screen and (max-width: 69rem) {
+  main .main_benefits h2 {
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 40rem) {
+  main .main_benefits h2 {
+    font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+    padding: 25px;
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+main .main_benefits .main_benefits-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10%;
+  padding-bottom: 50px;
+}
+@media screen and (max-width: 69rem) {
+  main .main_benefits .main_benefits-content {
+    gap: 7%;
+  }
+}
+@media screen and (max-width: 40rem) {
+  main .main_benefits .main_benefits-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 35px;
+  }
+}
+main .main_benefits .main_benefits-content .main_benefits-unit {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+@media screen and (max-width: 40rem) {
+  main .main_benefits .main_benefits-content .main_benefits-unit {
+    width: 60%;
+  }
+}
+main .main_benefits .main_benefits-content .main_benefits-unit img {
+  height: 60px;
+  margin-bottom: 25px;
+}
+@media screen and (max-width: 69rem) {
+  main .main_benefits .main_benefits-content .main_benefits-unit img {
+    height: 50px;
+  }
+}
+@media screen and (max-width: 40rem) {
+  main .main_benefits .main_benefits-content .main_benefits-unit img {
+    height: 40px;
+    margin-bottom: 10px;
+  }
+}
+main .main_benefits .main_benefits-content .main_benefits-unit h3 {
+  font-family: "Lora", serif;
+  font-weight: 600;
+  color: rgb(36, 37, 11);
+  font-size: clamp(0.8rem, 0.95vw, 1.15rem);
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 40rem) {
+  main .main_benefits .main_benefits-content .main_benefits-unit h3 {
+    font-size: clamp(0.75rem, 0.91vw, 1.1rem);
+  }
+}
+main .main_benefits .main_benefits-content .main_benefits-unit p {
+  font-family: "Lora", serif;
+  font-weight: 500;
+  color: rgb(36, 37, 11);
+  font-size: clamp(0.7rem, 0.9vw, 1rem);
+}
+@media screen and (max-width: 40rem) {
+  main .main_benefits .main_benefits-content .main_benefits-unit p {
+    font-size: clamp(0.7rem, 0.88vw, 1rem);
+  }
+}
+main .main_user-reviews {
+  background-color: rgb(188, 156, 108);
+  width: 100%;
+}
+main .main_user-reviews h2 {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  color: rgb(36, 37, 11);
+  font-size: clamp(1.1rem, 1.3vw, 1.4rem);
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+@media screen and (max-width: 69rem) {
+  main .main_user-reviews h2 {
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 40rem) {
+  main .main_user-reviews h2 {
+    font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+    padding: 25px;
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+main .main_user-reviews .main_user-reviews-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 35px;
+  padding-bottom: 50px;
+}
+@media screen and (max-width: 69rem) {
+  main .main_user-reviews .main_user-reviews-content {
+    flex-wrap: wrap;
+    margin: 0 25px 0 25px;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 40rem) {
+  main .main_user-reviews .main_user-reviews-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+main .main_user-reviews .main_user-reviews-content .main_user-reviews-unit {
+  background-color: rgb(238, 232, 224);
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 5px 5px 8px 1px rgb(119, 98, 68);
+  padding: 20px;
+}
+@media screen and (max-width: 69rem) {
+  main .main_user-reviews .main_user-reviews-content .main_user-reviews-unit {
+    width: 160px;
+  }
+}
+@media screen and (max-width: 40rem) {
+  main .main_user-reviews .main_user-reviews-content .main_user-reviews-unit {
+    width: 75%;
+    flex-direction: row;
+    gap: 25px;
+  }
+}
+main .main_user-reviews .main_user-reviews-content .main_user-reviews-unit img {
+  width: 100px;
+  margin-bottom: 20px;
+  border-radius: 50px;
+  align-self: center;
+}
+@media screen and (max-width: 40rem) {
+  main .main_user-reviews .main_user-reviews-content .main_user-reviews-unit img {
+    margin-bottom: 0;
+    width: 80px;
+  }
+}
+main .main_user-reviews .main_user-reviews-content .main_user-reviews-unit h4 {
+  font-family: "Lora", serif;
+  font-weight: 600;
+  color: rgb(36, 37, 11);
+  font-size: clamp(0.7rem, 0.8vw, 1.9rem);
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 69rem) {
+  main .main_user-reviews .main_user-reviews-content .main_user-reviews-unit h4 {
+    font-size: clamp(0.61rem, 0.75vw, 1rem);
+  }
+}
+@media screen and (max-width: 40rem) {
+  main .main_user-reviews .main_user-reviews-content .main_user-reviews-unit h4 {
+    margin-bottom: 10px;
+  }
+}
+main .main_user-reviews .main_user-reviews-content .main_user-reviews-unit p {
+  font-family: "Lora", serif;
+  font-weight: 500;
+  color: rgb(36, 37, 11);
+  font-size: clamp(0.7rem, 0.9vw, 1rem);
+  font-style: italic;
+}
+@media screen and (max-width: 40rem) {
+  main .main_user-reviews .main_user-reviews-content .main_user-reviews-unit p {
+    line-height: 14px;
+  }
+}
+
+.footer {
+  background-color: rgb(238, 232, 224);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 25px;
+}
+@media screen and (max-width: 69rem) {
+  .footer {
+    flex-direction: column;
+    padding: 0 25px;
+  }
+}
+.footer .footer_call-to-action {
+  flex: 1;
+  text-align: center;
+}
+.footer .footer_call-to-action h2 {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  color: rgb(36, 37, 11);
+  font-size: clamp(1.1rem, 1.3vw, 1.4rem);
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 69rem) {
+  .footer .footer_call-to-action h2 {
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
+    padding: 30px 30px 0 30px;
+  }
+}
+@media screen and (max-width: 40rem) {
+  .footer .footer_call-to-action h2 {
+    font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+    padding: 25px 25px 0 25px;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+.footer .footer_logo {
+  width: 100px;
+}
+@media screen and (max-width: 69rem) {
+  .footer .footer_logo {
+    margin-bottom: 25px;
+  }
+}
+
+.main_interaction {
+  background-color: rgb(169, 0, 19);
+  color: rgb(238, 232, 224);
+  font-family: "Lora", serif;
+  font-style: italic;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+@media screen and (max-width: 69rem) {
+  .main_interaction {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 40rem) {
+  .main_interaction {
+    font-size: clamp(0.7rem, 0.88vw, 1rem);
+  }
+}
+.main_interaction.hover {
+  background-color: rgb(96, 100, 24);
+  color: rgb(238, 232, 224);
+  font-family: "Lora", serif;
+  font-style: italic;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+@media screen and (max-width: 69rem) {
+  .main_interaction.hover {
+    margin-top: 0;
+  }
+}
+.main_interaction.discover {
+  display: none;
+}
+
+.main_call-to-action {
+  background-color: rgb(169, 0, 19);
+  color: rgb(238, 232, 224);
+  font-family: "Lora", serif;
+  font-style: italic;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+@media screen and (max-width: 40rem) {
+  .main_call-to-action {
+    font-size: clamp(0.7rem, 0.88vw, 1rem);
+  }
+}
+.main_call-to-action.hover {
+  background-color: rgb(96, 100, 24);
+  color: rgb(238, 232, 224);
+  font-family: "Lora", serif;
+  font-style: italic;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.footer_call-to-action button {
+  background-color: rgb(169, 0, 19);
+  color: rgb(238, 232, 224);
+  font-family: "Lora", serif;
+  font-style: italic;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+@media screen and (max-width: 69rem) {
+  .footer_call-to-action button {
+    margin-bottom: 25px;
+  }
+}
+@media screen and (max-width: 40rem) {
+  .footer_call-to-action button {
+    font-size: clamp(0.7rem, 0.88vw, 1rem);
+  }
+}
+.footer_call-to-action button.hover {
+  background-color: rgb(96, 100, 24);
+  color: rgb(238, 232, 224);
+  font-family: "Lora", serif;
+  font-style: italic;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+}/*# sourceMappingURL=main.css.map */

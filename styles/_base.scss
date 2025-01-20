@@ -1,0 +1,84 @@
+$mainColor: rgb(169, 0, 19);
+$secondColor: rgb(36, 37, 11);
+$backgoundColor: rgb(238, 232, 224);
+$secondBackgroundColor: rgb(188, 156, 108);
+$hoverColor: rgb(96, 100, 24);
+$titleFont: "Cinzel", serif;
+$contentFont: "Lora", serif;
+
+@mixin mainCopy {
+    font-family: $titleFont;
+    font-weight: 600;
+    color: $secondColor;
+    font-size: clamp(1.2rem, 1.5vw, 1.6rem);
+
+    span {
+        font-weight: 700;
+        font-size: clamp(1.4rem, 1.8vw, 1.9rem);;
+    }
+}
+
+@mixin h2 {
+    font-family: $titleFont;
+    font-weight: 600;
+    color: $secondColor;
+    font-size: clamp(1.1rem, 1.3vw, 1.4rem);
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+@mixin h3($textColor) {
+    font-family: $contentFont;
+    font-weight: 600;
+    color: $textColor;
+    font-size: clamp(0.8rem, 0.95vw, 1.15rem);
+    text-align: center;
+}
+
+@mixin h4 {
+    font-family: $contentFont;
+    font-weight: 600;
+    color: $secondColor;
+    font-size: clamp(0.7rem, 0.8vw, 1.9rem);
+    letter-spacing: 2px;
+}
+
+@mixin contentText {
+    font-family: $contentFont;
+    font-weight: 500;
+    color: $secondColor;
+    font-size: clamp(0.7rem, 0.9vw, 1rem);
+}
+
+@mixin button {
+    background-color: $mainColor;
+    color: $backgoundColor;
+    font-family: $contentFont;
+    font-style: italic;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+@mixin hoverButton {
+    background-color: $hoverColor;
+    color: $backgoundColor;
+    font-family: $contentFont;
+    font-style: italic;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+@mixin tablets {
+    @media screen and (max-width:69rem) { @content; }
+}
+
+@mixin phones {
+    @media screen and (max-width:40rem) { @content; }
+}
